@@ -1,10 +1,9 @@
 ﻿using OneDriver.Framework.Libs.Validator;
+using OneDriver.Module.Channel;
+using OneDriver.Module.Device;
 using OneDriver.PowerSupply.Abstract.Channels;
 using OneDriver.PowerSupply.Abstract.Contracts;
 using System.Collections.ObjectModel;
-using OneDriver.Module.Channel;
-using OneDriver.Module.Device;
-using OneDriver.Module.Parameter;
 
 namespace OneDriver.PowerSupply.Abstract
 {

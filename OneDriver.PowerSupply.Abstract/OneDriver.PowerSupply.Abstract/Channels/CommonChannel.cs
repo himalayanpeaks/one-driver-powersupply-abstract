@@ -1,5 +1,4 @@
-﻿using OneDriver.Module;
-using OneDriver.Module.Channel;
+﻿using OneDriver.Module.Channel;
 
 namespace OneDriver.PowerSupply.Abstract.Channels
 {
