@@ -1,9 +1,8 @@
-﻿using OneDriver.Framework.Module;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace OneDriver.PowerSupply.Abstract.Contracts
 {
-    public interface IPowerSupplyViewModel : IDeviceViewModel
+    public interface IPowerSupplyViewModel
     {
         ICommand CommandAllChannelsOn { get; }
         ICommand CommandAllChannelsOff { get; }

@@ -1,15 +1,14 @@
-﻿using OneDriver.PowerSupply.Abstract.Contracts;
-using System;
-using System.Linq;
-using System.Reflection;
-using Xunit;
+﻿using System.Reflection;
+using OneDriver.PowerSupply.Abstract.Contracts;
 
-public class IPowerSupplyContractTests
+namespace OneDriver.PowerSupply.Abstract.UnitTest;
+
+public class PowerSupplyFunctionsContractTests
 {
     [Fact]
     public void IPowerSupply_ShouldContainExpectedMethodSignatures()
     {
-        var type = typeof(IPowerSupply);
+        var type = typeof(IPowerSupplyFunctions);
         var allMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance);
 
         var expectedMethods = new[]

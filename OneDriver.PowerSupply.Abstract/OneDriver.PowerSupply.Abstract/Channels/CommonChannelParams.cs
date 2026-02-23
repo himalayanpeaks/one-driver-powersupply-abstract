@@ -1,9 +1,9 @@
-﻿using OneDriver.Framework.Module.Parameter;
+﻿using OneDriver.Module.Parameter;
 using OneDriver.PowerSupply.Abstract.Contracts;
 
 namespace OneDriver.PowerSupply.Abstract.Channels
 {
-    public class CommonChannelParams : BaseChannelParam
+    public class CommonChannelParams(string name) : BaseChannelParams(name)
     {
         private double _desiredVolts;
         private double _desiredAmps;
@@ -25,11 +25,6 @@ namespace OneDriver.PowerSupply.Abstract.Channels
         {
             get => _controlMode;
             set => SetProperty(ref _controlMode, value);
-        }
-
-        public CommonChannelParams(string name) : base(name)
-        {
-            
         }
     }
 }
