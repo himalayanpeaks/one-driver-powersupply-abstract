@@ -1,4 +1,5 @@
-﻿using OneDriver.Framework.Module.Parameter;
+﻿using OneDriver.Module;
+using OneDriver.Module.Channel;
 
 namespace OneDriver.PowerSupply.Abstract.Channels
 {
@@ -8,7 +9,7 @@ namespace OneDriver.PowerSupply.Abstract.Channels
     /// <typeparam name="TChannelParams"></typeparam>
     /// <typeparam name="TChannelProcessData"></typeparam>
     public class CommonChannel<TChannelParams, TChannelProcessData>
-        : BaseChannelWithProcessData<TChannelParams, TChannelProcessData>
+        : BaseChannel<TChannelParams, TChannelProcessData>
         where TChannelParams : CommonChannelParams
         where TChannelProcessData : CommonProcessData
     {

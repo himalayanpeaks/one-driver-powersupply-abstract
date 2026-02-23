@@ -1,8 +1,8 @@
-﻿using OneDriver.Framework.Module.Parameter;
+﻿using OneDriver.Module.Parameter;
 
 namespace OneDriver.PowerSupply.Abstract
 {
-    public class CommonDeviceParams : BaseDeviceParam
+    public class CommonDeviceParams : BaseDeviceWithChannelsParams
     {
         public double MaxAmps => GetProperty<double>();
         public double MaxVolts => GetProperty<double>();
@@ -22,7 +22,6 @@ namespace OneDriver.PowerSupply.Abstract
                     e.Value = 0.0;
                     break;
             }
-
         }
     }
 }
