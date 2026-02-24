@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using Moq;
 using OneDriver.Framework.Libs.Validator;
+using OneDriver.Module;
 using OneDriver.Module.Channel;
 using OneDriver.Module.Device;
 using OneDriver.PowerSupply.Abstract.Channels;
