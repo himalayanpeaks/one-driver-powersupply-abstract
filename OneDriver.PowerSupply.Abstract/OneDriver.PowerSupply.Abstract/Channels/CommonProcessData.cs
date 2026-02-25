@@ -11,13 +11,13 @@ namespace OneDriver.PowerSupply.Abstract.Channels
         public double Voltage
         {
             get => _voltage;
-            set => SetProperty(ref _voltage, value);
+            protected set => SetProperty(ref _voltage, value);
         }
 
         public double Current
         {
             get => _current;
-            set => SetProperty(ref _current, value);
+            protected set => SetProperty(ref _current, value);
         }
     }
 }

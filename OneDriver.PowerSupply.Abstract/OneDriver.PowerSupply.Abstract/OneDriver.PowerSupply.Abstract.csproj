@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OneDriver.Module" Version="0.9.7" />
+    <PackageReference Include="OneDriver.Module" Version="0.9.8" />
   </ItemGroup>
 
 </Project>
