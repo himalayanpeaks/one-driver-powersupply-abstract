@@ -7,13 +7,9 @@ namespace OneDriver.PowerSupply.Abstract.Channels
     /// </summary>
     /// <typeparam name="TChannelParams"></typeparam>
     /// <typeparam name="TChannelProcessData"></typeparam>
-    public class CommonChannel<TChannelParams, TChannelProcessData>
-        : BaseChannel<TChannelParams, TChannelProcessData>
+    public class CommonChannel<TChannelParams, TChannelProcessData>(
+        TChannelParams parameters,
+        TChannelProcessData processData) : BaseChannel<TChannelParams, TChannelProcessData>(parameters, processData)
         where TChannelParams : CommonChannelParams
-        where TChannelProcessData : CommonProcessData
-    {
-        protected CommonChannel(TChannelParams parameters, TChannelProcessData processData) : base(parameters, processData)
-        {
-        }
-    }
+        where TChannelProcessData : CommonProcessData;
 }

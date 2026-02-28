@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using OneDriver.PowerSupply.Abstract.Contracts;
+﻿using OneDriver.PowerSupply.Abstract.Contracts;
+using System.Reflection;
 
 namespace OneDriver.PowerSupply.Abstract.UnitTest;
 
