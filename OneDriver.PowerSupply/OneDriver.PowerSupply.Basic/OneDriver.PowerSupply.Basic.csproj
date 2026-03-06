@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OneDriver.Helper" Version="1.0.1" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+	  <None Include="icon.png" Pack="true" PackagePath="" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OneDriver.PowerSupply.Abstract\OneDriver.PowerSupply.Abstract.csproj" />
+  </ItemGroup>
+
+</Project>

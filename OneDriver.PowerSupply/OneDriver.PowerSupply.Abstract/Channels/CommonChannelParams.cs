@@ -24,7 +24,7 @@ namespace OneDriver.PowerSupply.Abstract.Channels
         public Definition.ControlMode ControlMode
         {
             get => _controlMode;
-            set => SetProperty(ref _controlMode, value);
+            set => SetProperty<Definition.ControlMode>(ref _controlMode, value);
         }
     }
 }
