@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.76.0" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\powersupply_basic.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OneDriver.PowerSupply.Basic\OneDriver.PowerSupply.Basic.csproj" />
+    <ProjectReference Include="..\OneDriver.PowerSupply.Factory\OneDriver.PowerSupply.Factory.csproj" />
+  </ItemGroup>
+
+</Project>
