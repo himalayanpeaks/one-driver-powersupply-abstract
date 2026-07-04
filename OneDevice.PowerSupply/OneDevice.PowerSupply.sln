@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.3.11520.95
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Abstract", "OneDriver.PowerSupply.Abstract\OneDevice.PowerSupply.Abstract.csproj", "{343787D8-24C7-49F6-9C27-FB41A7251E50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Abstract", "OneDevice.PowerSupply.Abstract\OneDevice.PowerSupply.Abstract.csproj", "{343787D8-24C7-49F6-9C27-FB41A7251E50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Abstract.UnitTest", "OneDriver.PowerSupply.Abstract.UnitTest\OneDevice.PowerSupply.Abstract.UnitTest.csproj", "{89F1C38A-1123-4919-A809-488E3F172D1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Abstract.UnitTest", "OneDevice.PowerSupply.Abstract.UnitTest\OneDevice.PowerSupply.Abstract.UnitTest.csproj", "{89F1C38A-1123-4919-A809-488E3F172D1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic", "OneDriver.PowerSupply.Basic\OneDevice.PowerSupply.Basic.csproj", "{728401F9-7543-B507-BA66-9750FFAAD476}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic", "OneDevice.PowerSupply.Basic\OneDevice.PowerSupply.Basic.csproj", "{728401F9-7543-B507-BA66-9750FFAAD476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic.UnitTest", "OneDriver.PowerSupply.UnitTest\OneDevice.PowerSupply.Basic.UnitTest.csproj", "{2018A375-919C-BD96-3415-21ADAD77929D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic.UnitTest", "OneDevice.PowerSupply.UnitTest\OneDevice.PowerSupply.Basic.UnitTest.csproj", "{2018A375-919C-BD96-3415-21ADAD77929D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Factory", "OneDriver.PowerSupply.Factory\OneDevice.PowerSupply.Factory.csproj", "{EBF5F3BB-8D97-5D95-C683-E433FAD02488}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Factory", "OneDevice.PowerSupply.Factory\OneDevice.PowerSupply.Factory.csproj", "{EBF5F3BB-8D97-5D95-C683-E433FAD02488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.IntegrationTest", "OneDriver.PowerSupply.IntegrationTest\OneDevice.PowerSupply.IntegrationTest.csproj", "{6771F79B-EB96-409F-B8CC-3D86BD6BABC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.IntegrationTest", "OneDevice.PowerSupply.IntegrationTest\OneDevice.PowerSupply.IntegrationTest.csproj", "{6771F79B-EB96-409F-B8CC-3D86BD6BABC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic.gRPC", "OneDriver.PowerSupply.Basic.gRPC\OneDevice.PowerSupply.Basic.gRPC.csproj", "{7856CEEB-E9C9-ED91-01D9-6B9482B256E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneDevice.PowerSupply.Basic.gRPC", "OneDevice.PowerSupply.Basic.gRPC\OneDevice.PowerSupply.Basic.gRPC.csproj", "{7856CEEB-E9C9-ED91-01D9-6B9482B256E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

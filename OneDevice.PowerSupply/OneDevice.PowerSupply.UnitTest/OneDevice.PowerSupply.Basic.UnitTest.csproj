@@ -24,9 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OneDriver.PowerSupply.Abstract\OneDevice.PowerSupply.Abstract.csproj" />
-    <ProjectReference Include="..\OneDriver.PowerSupply.Basic\OneDevice.PowerSupply.Basic.csproj" />
-    <ProjectReference Include="..\OneDriver.PowerSupply.Factory\OneDevice.PowerSupply.Factory.csproj" />
+    <ProjectReference Include="..\OneDevice.PowerSupply.Basic\OneDevice.PowerSupply.Basic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
