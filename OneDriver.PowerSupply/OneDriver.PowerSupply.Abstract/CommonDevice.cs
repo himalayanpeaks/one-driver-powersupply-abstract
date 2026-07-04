@@ -1,11 +1,11 @@
-﻿using OneDriver.Framework.Libs.Validator;
-using OneDriver.Module.Channel;
-using OneDriver.Module.Device;
-using OneDriver.PowerSupply.Abstract.Channels;
-using OneDriver.PowerSupply.Abstract.Contracts;
+﻿using OneDevice.Framework.Libs.Validator;
+using OneDevice.Module.Channel;
+using OneDevice.Module.Device;
+using OneDevice.PowerSupply.Abstract.Channels;
+using OneDevice.PowerSupply.Abstract.Contracts;
 using System.Collections.ObjectModel;
 
-namespace OneDriver.PowerSupply.Abstract
+namespace OneDevice.PowerSupply.Abstract
 {
     public abstract class CommonDevice<TDeviceParams, TChannelParams, TChannelProcessData>(
         TDeviceParams parameters,

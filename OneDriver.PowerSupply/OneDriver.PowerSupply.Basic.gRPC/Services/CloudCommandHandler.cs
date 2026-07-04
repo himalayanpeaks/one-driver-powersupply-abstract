@@ -1,4 +1,4 @@
-namespace OneDriver.PowerSupply.Basic.gRPC.Services
+namespace OneDevice.PowerSupply.Basic.gRPC.Services
 {
     public class CloudCommandHandler
     {

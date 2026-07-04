@@ -98,7 +98,7 @@ Update your `appsettings.json`:
 ### Start the Service
 
 ```bash
-cd OneDriver.PowerSupply.Basic.gRPC
+cd OneDevice.PowerSupply.Basic.gRPC
 dotnet run
 ```
 

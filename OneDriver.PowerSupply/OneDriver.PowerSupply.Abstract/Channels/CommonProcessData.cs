@@ -1,7 +1,7 @@
-﻿using OneDriver.Module.Parameter;
+﻿using OneDevice.Module.Parameter;
 
 
-namespace OneDriver.PowerSupply.Abstract.Channels
+namespace OneDevice.PowerSupply.Abstract.Channels
 {
     public class CommonProcessData : BaseProcessData
     {

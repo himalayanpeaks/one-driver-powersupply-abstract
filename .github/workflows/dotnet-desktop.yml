@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: OneDriver.PowerSupply/OneDriver.PowerSupply.sln
+      Solution_Name: OneDevice.PowerSupply/OneDevice.PowerSupply.sln
 
     steps:
       - name: Checkout repository
@@ -48,7 +48,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: OneDriver.PowerSupply/OneDriver.PowerSupply.sln
+      Solution_Name: OneDevice.PowerSupply/OneDevice.PowerSupply.sln
 
     steps:
       - uses: actions/checkout@v4

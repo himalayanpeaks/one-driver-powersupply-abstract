@@ -1,4 +1,4 @@
-# OneDriver.PowerSupply.Basic.gRPC - Quick Start
+# OneDevice.PowerSupply.Basic.gRPC - Quick Start
 
 ## What is this?
 
@@ -95,7 +95,7 @@ Power Supply Device (KD3005P)
 ## File Structure
 
 ```
-OneDriver.PowerSupply.Basic.gRPC/
+OneDevice.PowerSupply.Basic.gRPC/
 ├── Services/
 │   ├── PowerSupplyServiceImpl.cs        # gRPC service implementation
 │   ├── AzureIoTHubService.cs           # Azure IoT Hub integration

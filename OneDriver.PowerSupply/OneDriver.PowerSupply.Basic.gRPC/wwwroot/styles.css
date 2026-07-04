@@ -1,0 +1,255 @@
+:root {
+  --bg0: #f4f4e9;
+  --bg1: #d8e3d2;
+  --panel: rgba(20, 28, 31, 0.92);
+  --card: #121a1f;
+  --text: #f3f7f3;
+  --muted: #9cb4a9;
+  --accent: #ffb703;
+  --good: #44cf6c;
+  --warn: #ff5d73;
+  --mono: "JetBrains Mono", monospace;
+  --ui: "Space Grotesk", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ui);
+  color: var(--text);
+  min-height: 100vh;
+  background: radial-gradient(circle at 12% 8%, var(--bg1), transparent 35%),
+              radial-gradient(circle at 90% 80%, #9ec2bf, transparent 30%),
+              linear-gradient(155deg, var(--bg0), #ece6d0 40%, #dde8da);
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(transparent 31px, rgba(255, 255, 255, 0.03) 32px),
+                    linear-gradient(90deg, transparent 31px, rgba(255, 255, 255, 0.03) 32px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.panel {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 1.2rem auto;
+  background: var(--panel);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.04em;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #9ca3af;
+  box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.2);
+}
+
+.dot.live {
+  background: var(--good);
+  box-shadow: 0 0 0 4px rgba(68, 207, 108, 0.2);
+}
+
+.gauges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0.9rem;
+  padding: 1rem;
+}
+
+.gauge-card {
+  background: linear-gradient(160deg, #1b252e, #10171b 68%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.85rem;
+  animation: rise-in 420ms ease;
+}
+
+.channel-title {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.display-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.digital {
+  flex: 0 0 115px;
+  font-family: var(--mono);
+}
+
+.digital-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.digital-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.analog-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+}
+
+.analog {
+  width: 100%;
+  height: auto;
+}
+
+.arc {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 12;
+}
+
+.needle {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform-origin: 120px 120px;
+  transition: transform 180ms linear;
+}
+
+.analog-amps .needle {
+  stroke: #7fd7ff;
+}
+
+.hub {
+  fill: #f9fafb;
+}
+
+.meta {
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+}
+
+.controls {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.36rem;
+  font-size: 0.84rem;
+}
+
+input,
+select,
+button {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0e1519;
+  color: var(--text);
+  padding: 0.52rem 0.58rem;
+  font-family: var(--mono);
+}
+
+.actions {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #255aa8;
+}
+
+.btn-good {
+  background: #1f8f3c;
+}
+
+.btn-warn {
+  background: #ac2f41;
+}
+
+.message {
+  font-family: var(--mono);
+  color: var(--muted);
+  min-height: 1.1rem;
+  margin-top: 0.7rem;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .panel {
+    width: calc(100% - 1rem);
+    margin: 0.5rem auto;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+}

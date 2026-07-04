@@ -1,4 +1,4 @@
-﻿namespace OneDriver.PowerSupply.Basic.Products
+﻿namespace OneDevice.PowerSupply.Basic.Products
 {
     public class Definition
     {

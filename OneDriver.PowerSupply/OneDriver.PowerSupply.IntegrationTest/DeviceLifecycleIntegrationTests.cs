@@ -1,6 +1,6 @@
-using ControlMode = OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode;
+using ControlMode = OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode;
 
-namespace OneDriver.PowerSupply.IntegrationTest;
+namespace OneDevice.PowerSupply.IntegrationTest;
 
 /// <summary>
 /// Integration tests for device lifecycle and state management using mocked HAL.

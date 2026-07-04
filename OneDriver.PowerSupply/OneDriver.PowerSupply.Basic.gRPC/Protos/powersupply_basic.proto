@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "OneDriver.PowerSupply.Basic.gRPC";
+option csharp_namespace = "OneDevice.PowerSupply.Basic.gRPC";
 
 package powersupply;
 

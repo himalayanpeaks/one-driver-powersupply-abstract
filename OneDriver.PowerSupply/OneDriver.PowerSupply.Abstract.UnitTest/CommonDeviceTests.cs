@@ -1,11 +1,11 @@
 using Moq;
-using OneDriver.Framework.Libs.Validator;
-using OneDriver.Module;
-using OneDriver.Module.Channel;
-using OneDriver.PowerSupply.Abstract.Channels;
+using OneDevice.Framework.Libs.Validator;
+using OneDevice.Module;
+using OneDevice.Module.Channel;
+using OneDevice.PowerSupply.Abstract.Channels;
 using System.Collections.ObjectModel;
 
-namespace OneDriver.PowerSupply.Abstract.UnitTest;
+namespace OneDevice.PowerSupply.Abstract.UnitTest;
 
 public class CommonDeviceTests
 {

@@ -1,4 +1,4 @@
-# OneDriver.PowerSupply.Basic.gRPC
+# OneDevice.PowerSupply.Basic.gRPC
 
 A gRPC service for remote control and monitoring of power supply devices through Azure IoT Hub cloud access.
 
@@ -9,6 +9,7 @@ This project provides Azure IoT Hub integration to control Power Supply devices 
 ## Features
 
 - **Auto-Connect**: Automatically connects to Power Supply at startup (configurable)
+- **Interactive Web UI**: Browser dashboard with channel controls and analog-style voltage/current displays
 - **Azure IoT Hub Integration**: Send commands from Azure cloud via:
   - Cloud-to-Device (C2D) messages
   - Direct Methods
@@ -38,6 +39,7 @@ This project provides Azure IoT Hub integration to control Power Supply devices 
 - **ComPort**: Default is `COM5` for Power Supply (vs. `COM3` for IoLink Master)
 - **AutoConnectOnStartup**: Set to `true` to auto-connect on service start
 - **ProductType**: Currently supports `KD3005P`
+- You can also provide the connection string through environment variable `AZURE_IOTHUB_DEVICE_CONNECTION_STRING`
 
 ## Azure IoT Hub Commands
 
@@ -131,14 +133,17 @@ The service automatically sends telemetry to Azure IoT Hub:
 ### Starting the Service
 
 ```bash
-dotnet run --project OneDriver.PowerSupply.Basic.gRPC
+dotnet run --project OneDevice.PowerSupply.Basic.gRPC
 ```
+
+Open `http://localhost:5000` to use the interactive dashboard.
 
 The service will:
 1. Connect to Power Supply at configured COM port
 2. Register with Azure IoT Hub
 3. Start listening for cloud commands
 4. Send initial telemetry
+5. Expose web UI + JSON API for real-time control and monitoring
 
 ### Sending Commands from Azure Portal
 

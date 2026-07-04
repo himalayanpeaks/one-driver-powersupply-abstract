@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OneDevice Power Supply Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+  <main class="panel">
+    <header class="topbar">
+      <div>
+        <h1>Power Supply</h1>
+        <p class="subtitle">gRPC + Azure IoT Device Console</p>
+      </div>
+      <div class="status-wrap">
+        <span id="conn-dot" class="dot"></span>
+        <span id="conn-text">Connecting...</span>
+      </div>
+    </header>
+
+    <section class="gauges" id="gauges"></section>
+
+    <section class="controls">
+      <div class="control-grid">
+        <label>
+          Channel
+          <select id="channel-select"></select>
+        </label>
+        <label>
+          Voltage Setpoint (V)
+          <input id="volts-input" type="number" min="0" step="0.01" value="5.00" />
+        </label>
+        <label>
+          Current Limit (A)
+          <input id="amps-input" type="number" min="0" step="0.01" value="1.00" />
+        </label>
+        <label>
+          Control Mode
+          <select id="mode-select">
+            <option value="voltage">Voltage</option>
+            <option value="current">Current</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="apply-btn" class="btn btn-primary">Apply Channel Settings</button>
+        <button id="all-on-btn" class="btn btn-good">All Outputs ON</button>
+        <button id="all-off-btn" class="btn btn-warn">All Outputs OFF</button>
+      </div>
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <template id="gauge-template">
+    <article class="gauge-card">
+      <h2 class="channel-title"></h2>
+      <div class="display-row">
+        <div class="digital">
+          <div class="digital-label">Voltage</div>
+          <div class="digital-value volts">0.00 V</div>
+          <div class="digital-label">Current</div>
+          <div class="digital-value amps">0.00 A</div>
+        </div>
+        <div class="analog-wrap">
+          <svg viewBox="0 0 240 140" class="analog analog-volts" role="img" aria-label="Voltage gauge">
+            <path d="M 20 120 A 100 100 0 0 1 220 120" class="arc"></path>
+            <line x1="120" y1="120" x2="120" y2="30" class="needle needle-volts"></line>
+            <circle cx="120" cy="120" r="6" class="hub"></circle>
+          </svg>
+          <svg viewBox="0 0 240 140" class="analog analog-amps" role="img" aria-label="Current gauge">
+            <path d="M 20 120 A 100 100 0 0 1 220 120" class="arc"></path>
+            <line x1="120" y1="120" x2="120" y2="30" class="needle needle-amps"></line>
+            <circle cx="120" cy="120" r="6" class="hub"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="mode"></span>
+        <span class="setpoints"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>

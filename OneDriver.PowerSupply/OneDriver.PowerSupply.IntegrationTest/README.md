@@ -1,6 +1,6 @@
 # Power Supply Integration Tests
 
-This project contains integration tests for the OneDriver PowerSupply solution.
+This project contains integration tests for the OneDevice PowerSupply solution.
 
 ## ✅ ALL TESTS USE MOCKING - NO HARDWARE REQUIRED
 

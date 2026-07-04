@@ -1,9 +1,9 @@
-﻿using OneDriver.PowerSupply.Abstract.Channels;
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.Framework.Libs.Validator;
-using OneDriver.PowerSupply.Basic.Products;
+﻿using OneDevice.PowerSupply.Abstract.Channels;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.Framework.Libs.Validator;
+using OneDevice.PowerSupply.Basic.Products;
 
-namespace OneDriver.PowerSupply.Factory
+namespace OneDevice.PowerSupply.Factory
 {
     public enum PowerSupplyType
     {

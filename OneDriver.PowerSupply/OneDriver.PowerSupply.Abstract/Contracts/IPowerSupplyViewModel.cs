@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace OneDriver.PowerSupply.Abstract.Contracts
+namespace OneDevice.PowerSupply.Abstract.Contracts
 {
     public interface IPowerSupplyViewModel
     {

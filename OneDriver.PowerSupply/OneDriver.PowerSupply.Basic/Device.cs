@@ -1,15 +1,15 @@
-﻿using OneDriver.Framework.Base;
-using OneDriver.Framework.Libs.Validator;
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.PowerSupply.Basic.Channels;
-using OneDriver.PowerSupply.Basic.Products;
+﻿using OneDevice.Framework.Base;
+using OneDevice.Framework.Libs.Validator;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.PowerSupply.Basic.Channels;
+using OneDevice.PowerSupply.Basic.Products;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using OneDriver.Module.Channel;
-using OneDriver.PowerSupply.Abstract.Channels;
+using OneDevice.Module.Channel;
+using OneDevice.PowerSupply.Abstract.Channels;
 using Serilog;
 
-namespace OneDriver.PowerSupply.Basic
+namespace OneDevice.PowerSupply.Basic
 {
     public class Device : CommonDevice<CommonDeviceParams, CommonChannelParams, CommonProcessData>
     {

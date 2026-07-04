@@ -1,7 +1,7 @@
-﻿using OneDriver.PowerSupply.Abstract.Contracts;
+﻿using OneDevice.PowerSupply.Abstract.Contracts;
 using System.Reflection;
 
-namespace OneDriver.PowerSupply.Abstract.UnitTest;
+namespace OneDevice.PowerSupply.Abstract.UnitTest;
 
 public class PowerSupplyFunctionsContractTests
 {

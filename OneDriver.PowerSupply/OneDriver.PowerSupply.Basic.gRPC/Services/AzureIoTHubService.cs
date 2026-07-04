@@ -2,7 +2,7 @@ using Microsoft.Azure.Devices.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace OneDriver.PowerSupply.Basic.gRPC.Services
+namespace OneDevice.PowerSupply.Basic.gRPC.Services
 {
     public class AzureIoTHubService : IDisposable
     {
@@ -16,7 +16,8 @@ namespace OneDriver.PowerSupply.Basic.gRPC.Services
         public AzureIoTHubService(IConfiguration configuration, ILogger<AzureIoTHubService> logger)
         {
             _logger = logger;
-            _connectionString = configuration["AzureIoTHub:ConnectionString"];
+            _connectionString = configuration["AzureIoTHub:ConnectionString"]
+                ?? Environment.GetEnvironmentVariable("AZURE_IOTHUB_DEVICE_CONNECTION_STRING");
 
             if (!string.IsNullOrEmpty(_connectionString))
             {
@@ -32,7 +33,7 @@ namespace OneDriver.PowerSupply.Basic.gRPC.Services
             }
             else
             {
-                _logger.LogWarning("Azure IoT Hub connection string not configured in appsettings.json");
+                _logger.LogWarning("Azure IoT Hub connection string not configured. Set AzureIoTHub:ConnectionString or AZURE_IOTHUB_DEVICE_CONNECTION_STRING.");
             }
         }
 

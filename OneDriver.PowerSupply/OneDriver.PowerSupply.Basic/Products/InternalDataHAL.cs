@@ -1,6 +1,6 @@
-﻿using OneDriver.Framework.Libs.Announcer;
+﻿using OneDevice.Framework.Libs.Announcer;
 
-namespace OneDriver.PowerSupply.Basic.Products
+namespace OneDevice.PowerSupply.Basic.Products
 {
     public class InternalDataHal : BaseDataForAnnouncement
     {

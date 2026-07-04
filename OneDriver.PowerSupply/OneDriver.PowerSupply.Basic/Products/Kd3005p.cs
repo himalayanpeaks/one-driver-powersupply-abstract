@@ -1,11 +1,11 @@
-﻿using OneDriver.Framework.Libs.Announcer;
+﻿using OneDevice.Framework.Libs.Announcer;
 using System.IO.Ports;
-using OneDriver.Framework.Libs.Validator;
+using OneDevice.Framework.Libs.Validator;
 using Serilog;
 using System.Globalization;
 using OneDriver.Toolbox;
 
-namespace OneDriver.PowerSupply.Basic.Products
+namespace OneDevice.PowerSupply.Basic.Products
 {
     public class Kd3005p : DataTunnel<InternalDataHal>, IPowerSupplyHal
     {

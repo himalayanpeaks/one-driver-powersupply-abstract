@@ -1,7 +1,7 @@
-﻿using OneDriver.Module.Parameter;
-using OneDriver.PowerSupply.Abstract.Contracts;
+﻿using OneDevice.Module.Parameter;
+using OneDevice.PowerSupply.Abstract.Contracts;
 
-namespace OneDriver.PowerSupply.Abstract.Channels
+namespace OneDevice.PowerSupply.Abstract.Channels
 {
     public class CommonChannelParams(string name) : BaseChannelParams(name)
     {

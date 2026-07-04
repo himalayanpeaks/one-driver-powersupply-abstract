@@ -1,10 +1,10 @@
 using Moq;
-using OneDriver.Framework.Libs.Announcer;
-using OneDriver.Framework.Libs.Validator;
-using OneDriver.PowerSupply.Basic.Products;
-using static OneDriver.Module.Definition;
+using OneDevice.Framework.Libs.Announcer;
+using OneDevice.Framework.Libs.Validator;
+using OneDevice.PowerSupply.Basic.Products;
+using static OneDevice.Module.Definition;
 
-namespace OneDriver.PowerSupply.Basic.UnitTest;
+namespace OneDevice.PowerSupply.Basic.UnitTest;
 
 public class DeviceTests
 {
@@ -21,7 +21,7 @@ public class DeviceTests
         _halMock.Setup(h => h.NumberOfChannels).Returns(2);
         _halMock.Setup(h => h.MaxVoltageInVolts).Returns(30);
         _halMock.Setup(h => h.MaxCurrentInAmpere).Returns(5);
-        _halMock.Setup(h => h.Mode).Returns(new OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
+        _halMock.Setup(h => h.Mode).Returns(new OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
 
         _halMock.Setup(h => h.AttachToProcessDataEvent(It.IsAny<DataTunnel<InternalDataHal>.DataEventHandler>()))
             .Callback<DataTunnel<InternalDataHal>.DataEventHandler>(callback => _processDataChangedCallback = callback);

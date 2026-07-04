@@ -1,8 +1,8 @@
-using OneDriver.PowerSupply.Factory;
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.PowerSupply.Abstract.Channels;
+using OneDevice.PowerSupply.Factory;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.PowerSupply.Abstract.Channels;
 
-namespace OneDriver.PowerSupply.Basic.gRPC.Services
+namespace OneDevice.PowerSupply.Basic.gRPC.Services
 {
     public class PowerSupplyHostedService : IHostedService
     {

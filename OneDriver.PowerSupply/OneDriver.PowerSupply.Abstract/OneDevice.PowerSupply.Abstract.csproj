@@ -8,14 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OneDriver.Helper" Version="1.0.1" />
-    <PackageReference Include="System.IO.Ports" Version="10.0.3" />
 	  <None Include="icon.png" Pack="true" PackagePath="" />
-
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OneDriver.PowerSupply.Abstract\OneDriver.PowerSupply.Abstract.csproj" />
+    <PackageReference Include="OneDevice.Module" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

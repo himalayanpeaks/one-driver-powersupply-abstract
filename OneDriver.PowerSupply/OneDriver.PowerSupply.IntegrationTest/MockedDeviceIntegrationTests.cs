@@ -1,11 +1,11 @@
 using Moq;
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.PowerSupply.Abstract.Channels;
-using OneDriver.PowerSupply.Basic;
-using OneDriver.PowerSupply.Basic.Products;
-using OneDriver.Framework.Libs.Validator;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.PowerSupply.Abstract.Channels;
+using OneDevice.PowerSupply.Basic;
+using OneDevice.PowerSupply.Basic.Products;
+using OneDevice.Framework.Libs.Validator;
 
-namespace OneDriver.PowerSupply.IntegrationTest;
+namespace OneDevice.PowerSupply.IntegrationTest;
 
 /// <summary>
 /// Integration tests using mocked HAL layer.
@@ -21,16 +21,16 @@ public class MockedDeviceIntegrationTests
         mockHal.Setup(h => h.MaxCurrentInAmpere).Returns(5.0);
         mockHal.Setup(h => h.NumberOfChannels).Returns(1);
         mockHal.Setup(h => h.Identification).Returns("MockedPowerSupply");
-        mockHal.Setup(h => h.Mode).Returns(new OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode[1]);
+        mockHal.Setup(h => h.Mode).Returns(new OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode[1]);
         
         mockHal.Setup(h => h.SetDesiredVolts(It.IsAny<double>(), It.IsAny<double>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
         mockHal.Setup(h => h.SetDesiredAmps(It.IsAny<double>(), It.IsAny<double>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.SetMode(It.IsAny<double>(), It.IsAny<OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.AllOn()).Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.AllOff()).Returns(OneDriver.Module.Definition.DeviceError.NoError);
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.SetMode(It.IsAny<double>(), It.IsAny<OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode>()))
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.AllOn()).Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.AllOff()).Returns(OneDevice.Module.Definition.DeviceError.NoError);
         
         return mockHal;
     }
@@ -94,9 +94,9 @@ public class MockedDeviceIntegrationTests
         var device = new Device("TestDevice", mockValidator.Object, mockHal.Object);
 
         var channel = device.Elements.First();
-        channel.Parameters.ControlMode = OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
+        channel.Parameters.ControlMode = OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
 
-        mockHal.Verify(h => h.SetMode(0, OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current), Times.Once);
+        mockHal.Verify(h => h.SetMode(0, OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current), Times.Once);
     }
 
     [Fact]
@@ -135,11 +135,11 @@ public class MockedDeviceIntegrationTests
         var channel = device.Elements.First();
         channel.Parameters.DesiredVolts = 10.0;
         channel.Parameters.DesiredAmps = 2.0;
-        channel.Parameters.ControlMode = OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
+        channel.Parameters.ControlMode = OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
 
         mockHal.Verify(h => h.SetDesiredVolts(0, 10.0), Times.Once);
         mockHal.Verify(h => h.SetDesiredAmps(0, 2.0), Times.Once);
-        mockHal.Verify(h => h.SetMode(0, OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current), Times.Once);
+        mockHal.Verify(h => h.SetMode(0, OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current), Times.Once);
     }
 
     [Fact]
@@ -196,7 +196,7 @@ public class MockedDeviceIntegrationTests
         mockHal.Setup(h => h.MaxVoltageInVolts).Returns(60.0);
         mockHal.Setup(h => h.MaxCurrentInAmpere).Returns(10.0);
         mockHal.Setup(h => h.NumberOfChannels).Returns(2);
-        mockHal.Setup(h => h.Mode).Returns(new OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
+        mockHal.Setup(h => h.Mode).Returns(new OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
         
         var mockValidator = new Mock<IValidator>();
         var device = new Device("CustomDevice", mockValidator.Object, mockHal.Object);
@@ -213,9 +213,9 @@ public class MockedDeviceIntegrationTests
         mockHal.Setup(h => h.MaxVoltageInVolts).Returns(30.0);
         mockHal.Setup(h => h.MaxCurrentInAmpere).Returns(5.0);
         mockHal.Setup(h => h.NumberOfChannels).Returns(2);
-        mockHal.Setup(h => h.Mode).Returns(new OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
+        mockHal.Setup(h => h.Mode).Returns(new OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode[2]);
         mockHal.Setup(h => h.SetDesiredVolts(It.IsAny<double>(), It.IsAny<double>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
         
         var mockValidator = new Mock<IValidator>();
         var device = new Device("MultiChannel", mockValidator.Object, mockHal.Object);
@@ -240,7 +240,7 @@ public class MockedDeviceIntegrationTests
         var channel = device.Elements.First();
         channel.Parameters.DesiredVolts = 15.0;
         channel.Parameters.DesiredAmps = 3.0;
-        channel.Parameters.ControlMode = OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
+        channel.Parameters.ControlMode = OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode.Current;
 
         device.AllChannelsOn();
         device.SetVolts(0, 20.0);

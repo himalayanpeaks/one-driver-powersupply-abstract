@@ -1,6 +1,6 @@
-﻿using OneDriver.Module.Parameter;
+﻿using OneDevice.Module.Parameter;
 
-namespace OneDriver.PowerSupply.Abstract
+namespace OneDevice.PowerSupply.Abstract
 {
     public class CommonDeviceParams : BaseDeviceWithChannelsParams
     {

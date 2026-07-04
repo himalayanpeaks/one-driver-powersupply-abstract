@@ -1,12 +1,12 @@
 using Grpc.Core;
-using OneDriver.PowerSupply.Basic;
-using OneDriver.PowerSupply.Abstract.Contracts;
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.PowerSupply.Abstract.Channels;
+using OneDevice.PowerSupply.Basic;
+using OneDevice.PowerSupply.Abstract.Contracts;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.PowerSupply.Abstract.Channels;
 using System.Collections.Concurrent;
-using OneDriver.PowerSupply.Basic.Channels;
+using OneDevice.PowerSupply.Basic.Channels;
 
-namespace OneDriver.PowerSupply.Basic.gRPC.Services
+namespace OneDevice.PowerSupply.Basic.gRPC.Services
 {
     public class PowerSupplyServiceImpl : PowerSupplyService.PowerSupplyServiceBase
     {
@@ -23,6 +23,48 @@ namespace OneDriver.PowerSupply.Basic.gRPC.Services
         {
             _devices.TryAdd(deviceId, device);
             _logger.LogInformation("Device {DeviceId} registered in service", deviceId);
+        }
+
+        public bool HasDevice(string? deviceId)
+        {
+            return !string.IsNullOrWhiteSpace(deviceId) && _devices.ContainsKey(deviceId);
+        }
+
+        public string? GetFirstDeviceId()
+        {
+            return _devices.Keys.FirstOrDefault();
+        }
+
+        public DeviceSnapshot? GetDeviceSnapshot(string deviceId)
+        {
+            if (!_devices.TryGetValue(deviceId, out var device))
+            {
+                return null;
+            }
+
+            var channels = new List<ChannelSnapshot>();
+            for (int i = 0; i < device.Elements.Count; i++)
+            {
+                var channel = device.Elements[i];
+                var processData = (ChannelProcessData)channel.ProcessData;
+
+                channels.Add(new ChannelSnapshot(
+                    i,
+                    channel.Parameters.Name,
+                    channel.Parameters.DesiredVolts,
+                    channel.Parameters.DesiredAmps,
+                    channel.Parameters.ControlMode == Definition.ControlMode.Voltage ? "Voltage" : "Current",
+                    processData.Voltage,
+                    processData.Current));
+            }
+
+            return new DeviceSnapshot(
+                deviceId,
+                device.Parameters.Name,
+                device.Parameters.MaxVolts,
+                device.Parameters.MaxAmps,
+                channels,
+                DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
         }
 
         public override Task<ConnectDeviceResponse> ConnectDevice(ConnectDeviceRequest request, ServerCallContext context)
@@ -331,5 +373,22 @@ namespace OneDriver.PowerSupply.Basic.gRPC.Services
                 }
             });
         }
+
+        public sealed record ChannelSnapshot(
+            int ChannelNumber,
+            string Name,
+            double DesiredVolts,
+            double DesiredAmps,
+            string ControlMode,
+            double CurrentVolts,
+            double CurrentAmps);
+
+        public sealed record DeviceSnapshot(
+            string DeviceId,
+            string Name,
+            double MaxVolts,
+            double MaxAmps,
+            IReadOnlyList<ChannelSnapshot> Channels,
+            long Timestamp);
     }
 }

@@ -1,9 +1,9 @@
-using OneDriver.PowerSupply.Abstract;
-using OneDriver.PowerSupply.Abstract.Channels;
-using OneDriver.Module.Channel;
-using ControlMode = OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode;
+using OneDevice.PowerSupply.Abstract;
+using OneDevice.PowerSupply.Abstract.Channels;
+using OneDevice.Module.Channel;
+using ControlMode = OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode;
 
-namespace OneDriver.PowerSupply.IntegrationTest;
+namespace OneDevice.PowerSupply.IntegrationTest;
 
 /// <summary>
 /// Integration tests for cross-component integration using mocked HAL.

@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <None Include="icon.png" Pack="true" PackagePath="" />
+    <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OneDriver.Module" Version="1.0.0" />
+    <ProjectReference Include="..\OneDriver.PowerSupply.Basic\OneDevice.PowerSupply.Basic.csproj" />
   </ItemGroup>
 
 </Project>

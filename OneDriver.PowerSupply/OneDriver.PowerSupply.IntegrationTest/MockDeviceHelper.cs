@@ -1,9 +1,9 @@
 using Moq;
-using OneDriver.PowerSupply.Basic;
-using OneDriver.PowerSupply.Basic.Products;
-using OneDriver.Framework.Libs.Validator;
+using OneDevice.PowerSupply.Basic;
+using OneDevice.PowerSupply.Basic.Products;
+using OneDevice.Framework.Libs.Validator;
 
-namespace OneDriver.PowerSupply.IntegrationTest;
+namespace OneDevice.PowerSupply.IntegrationTest;
 
 /// <summary>
 /// Helper class for creating mocked devices for integration tests.
@@ -18,15 +18,15 @@ public static class MockDeviceHelper
         mockHal.Setup(h => h.MaxCurrentInAmpere).Returns(maxAmps);
         mockHal.Setup(h => h.NumberOfChannels).Returns(channelCount);
         mockHal.Setup(h => h.Identification).Returns("MockedPowerSupply");
-        mockHal.Setup(h => h.Mode).Returns(new OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode[channelCount]);
+        mockHal.Setup(h => h.Mode).Returns(new OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode[channelCount]);
         mockHal.Setup(h => h.SetDesiredVolts(It.IsAny<double>(), It.IsAny<double>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
         mockHal.Setup(h => h.SetDesiredAmps(It.IsAny<double>(), It.IsAny<double>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.SetMode(It.IsAny<double>(), It.IsAny<OneDriver.PowerSupply.Abstract.Contracts.Definition.ControlMode>()))
-            .Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.AllOn()).Returns(OneDriver.Module.Definition.DeviceError.NoError);
-        mockHal.Setup(h => h.AllOff()).Returns(OneDriver.Module.Definition.DeviceError.NoError);
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.SetMode(It.IsAny<double>(), It.IsAny<OneDevice.PowerSupply.Abstract.Contracts.Definition.ControlMode>()))
+            .Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.AllOn()).Returns(OneDevice.Module.Definition.DeviceError.NoError);
+        mockHal.Setup(h => h.AllOff()).Returns(OneDevice.Module.Definition.DeviceError.NoError);
 
         var mockValidator = new Mock<IValidator>();
         return new Device(name, mockValidator.Object, mockHal.Object);

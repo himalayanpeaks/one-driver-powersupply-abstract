@@ -1,6 +1,6 @@
-﻿using OneDriver.PowerSupply.Abstract;
+﻿using OneDevice.PowerSupply.Abstract;
 
-namespace OneDriver.PowerSupply.Basic
+namespace OneDevice.PowerSupply.Basic
 {
     public class DeviceParams(string name) : CommonDeviceParams(name);
 }

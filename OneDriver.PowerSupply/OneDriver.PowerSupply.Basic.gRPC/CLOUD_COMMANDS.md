@@ -319,7 +319,7 @@ az iot hub monitor-events \
 
 1. **Start the service**
    ```bash
-   dotnet run --project OneDriver.PowerSupply.Basic.gRPC
+   dotnet run --project OneDevice.PowerSupply.Basic.gRPC
    ```
 
 2. **Verify connection** (check logs for "Successfully connected to Power Supply at COM5")

@@ -1,6 +1,6 @@
-﻿using OneDriver.Module.Hal;
+﻿using OneDevice.Module.Hal;
 
-namespace OneDriver.PowerSupply.Basic.Products
+namespace OneDevice.PowerSupply.Basic.Products
 {
     public interface IPowerSupplyHal : IHalLayer<InternalDataHal>, IStringReader, IStringWriter
     {

@@ -1,7 +1,7 @@
-﻿using OneDriver.Module.Channel;
-using OneDriver.PowerSupply.Abstract.Channels;
+﻿using OneDevice.Module.Channel;
+using OneDevice.PowerSupply.Abstract.Channels;
 
-namespace OneDriver.PowerSupply.Basic.Channels
+namespace OneDevice.PowerSupply.Basic.Channels
 {
     /// <summary>
     /// Unused class
